@@ -236,6 +236,32 @@ local module = {
     UseKeymap('insert_date', function ()
       vim.cmd('execute "norm! a" . strftime("%Y-%m-%dT%H:%M:%S%z")')
     end)
+
+    UseKeymap('list_to_args', function ()
+      local count = 0
+      local lines_to_mutate = {}
+      for i, line in ipairs(vim.fn.getline(1, '$')) do
+        if line:match'%S' then
+          count = count + 1
+          table.insert(lines_to_mutate, i)
+        end
+      end
+      local saved_pos = vim.fn.winsaveview()
+      vim.cmd'normal! gg'
+      for _, line_num in ipairs(lines_to_mutate) do
+        local line = vim.fn.getline(line_num)
+        vim.fn.setline(line_num, '"' .. line .. '"')
+      end
+      vim.cmd[[silent! %join!]]
+      vim.cmd[[silent! %s/"\ze"/" /g]]
+      vim.cmd[[silent! s/\s\+$//]]
+      vim.cmd'normal! y$'
+      vim.cmd'normal! u'
+      vim.cmd'nohlsearch'
+      vim.fn.winrestview(saved_pos)
+      vim.defer_fn(function () print('yanked ' .. count .. ' args') end, 0)
+      vim.defer_fn(function () print'' end, 3000)
+    end)
   end,
 }
 

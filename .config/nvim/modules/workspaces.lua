@@ -6,8 +6,6 @@ local module = {
     local conceal_namespace = vim.api.nvim_create_namespace'workspaces_conceal'
     local virtual_namespace = vim.api.nvim_create_namespace'workspaces_virtual'
     vim.cmd'au BufRead,BufNewFile *.workspaces set filetype=workspaces'
-
-    -- change cwd to current files directory
     local function find_git_root (path)
       local git_path = path .. '/.git'
       if vim.fn.isdirectory(git_path) == 1 then

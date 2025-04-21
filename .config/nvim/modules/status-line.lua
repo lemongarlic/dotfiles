@@ -56,22 +56,22 @@ function _G.__statusline__.RenderStatusRight ()
     return ''
   end
   if vim.bo.filetype == 'TelescopePrompt' then
-    return 'telescope'
+    return 'search'
   end
   if vim.bo.filetype == 'workspaces' then
     return 'workspaces'
   end
   if vim.bo.filetype == 'harpoon' then
-    return 'harpoon'
+    return 'speed dial'
   end
   if vim.bo.filetype == 'aerial' then
-    return 'aerial'
+    return 'symbols'
   end
   if vim.bo.filetype == 'aerial-nav' then
-    return 'aerial-nav'
+    return 'symbols'
   end
   if vim.bo.filetype == 'minifiles' then
-    return 'minifiles'
+    return 'files'
   end
   if vim.bo.buftype == 'terminal' then
     return 'terminal'
