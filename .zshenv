@@ -32,5 +32,7 @@ if [[ $IS_WSL -eq 1 ]]; then
 elif [[ $IS_MAC -eq 1 ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
   export PATH="/opt/homebrew/opt/uutils-coreutils/libexec/uubin:$PATH"
+  export PATH="$HOME/Library/Android/sdk/tools:$PATH"
+  export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 fi
 
