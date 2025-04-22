@@ -41,6 +41,8 @@ local module = {
     'shatur/neovim-ayu',
     'cpwrs/americano.nvim',
     'dgox16/oldworld.nvim',
+    'nyoom-engineering/oxocarbon.nvim',
+    'bluz71/vim-moonfly-colors',
   },
   fn = function ()
     -- Fix colors

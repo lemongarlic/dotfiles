@@ -120,7 +120,7 @@ DefKeymap{
   notes_bookmarks = { ';', prefix = 'note', mode = { 'n' }, desc = 'notes list bookmarks' },
   -- open_context = { 'C', prefix = 'open', mode = { 'n' }, desc = 'explore [c]ontext' },
   open_dev_browser = { 'd', prefix = 'open', mode = { 'n' }, desc = 'explore [d]ev' },
-  open_home_browser = { 'h', prefix = 'open', mode = { 'n' }, desc = 'explore [h]ome' },
+  open_home_browser = { 'H', prefix = 'open', mode = { 'n' }, desc = 'explore [h]ome' },
   open_temp_browser = { 't', prefix = 'open', mode = { 'n' }, desc = 'explore [t]mp' },
   open_config_browser = { 'A', prefix = 'open', mode = { 'n' }, desc = 'explore all configs' },
   open_project_browser = { 'p', prefix = 'open', mode = { 'n' }, desc = 'explore current [p]roject' },
@@ -131,6 +131,7 @@ DefKeymap{
   -- open_rider = { 'r', prefix = 'open', mode = { 'n' }, desc = 'open in [r]ider' },
   open_persistent_file_browser = { 'O', prefix = 'open', mode = { 'n' }, desc = 'persistent explorer' },
   search_config = { 'a', prefix = 'open', mode = { 'n' }, desc = 'search [a]ll configs' },
+  search_home = { 'h', prefix = 'open', mode = { 'n' }, desc = 'search home' },
   empty_graphql_file = { 'G', prefix = 'open_new', mode = { 'n' }, desc = '[G]raphQL file' },
   empty_sql_file = { 'S', prefix = 'open_new', mode = { 'n' }, desc = '[S]QL file' },
   empty_bash_file = { 'b', prefix = 'open_new', mode = { 'n' }, desc = '[b]ash file' },
@@ -224,6 +225,7 @@ DefKeymap{
   vim_tab_move_right = { 'l', prefix = 'vim_tabs', mode = { 'n' }, desc = 'tab move right' },
   vim_tab_quickadd = { ';', prefix = 'vim_tabs', mode = { 'n' }, desc = 'tab quickadd' },
   vim_tab_name = { 'r', prefix = 'vim_tabs', mode = { 'n' }, desc = 'tab re[n]ame' },
+  list_to_args = { 'a', prefix = 'edit', mode = { 'n' }, desc = 'list to [a]rgs' },
   yank_filename = { 'f', prefix = 'yank', mode = { 'n' }, desc = '[f]ilename' },
 }
 

@@ -163,11 +163,19 @@ play() {
   fi
 }
 
+## load user script
+load-user-script() {
+  if [[ -f "$HOME/.user.sh" ]]; then
+    source "$HOME/.user.sh"
+  fi
+}
+
 
 
 # init
 check-yadm-updates
 ensure-pueued-is-running
+load-user-script
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

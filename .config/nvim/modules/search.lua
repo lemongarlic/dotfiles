@@ -61,6 +61,7 @@ local module = {
     UseKeymap('search_diagnostics', function () telescope.diagnostics() end)
     UseKeymap('search_command_history', function () telescope.command_history() end)
     UseKeymap('search_vim_grep', function () telescope.live_grep{ cwd = '~/.config/nvim' } end)
+    UseKeymap('search_home', function () telescope.find_files{ cwd = '~/' } end)
     UseKeymap('search_grep', function ()
       telescope.current_buffer_fuzzy_find()
     end)
