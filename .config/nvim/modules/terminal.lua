@@ -4,6 +4,11 @@ local module = {
   fn = function ()
     -- use esc to leave terminal
     vim.keymap.set('t', '<esc>', '<c-\\><c-n>G0')
+    -- use m-hjkl to move out of terminal
+    vim.keymap.set('t', '<m-h>', '<c-\\><c-n><c-w>h')
+    vim.keymap.set('t', '<m-j>', '<c-\\><c-n><c-w>j')
+    vim.keymap.set('t', '<m-k>', '<c-\\><c-n><c-w>k')
+    vim.keymap.set('t', '<m-l>', '<c-\\><c-n><c-w>l')
     -- terminal system
     _G.__terminals__ = {}
     local term_list = {}

@@ -18,8 +18,7 @@ export IS_LINUX=0
 export IS_ARCH_LINUX=0
 if [[ $(uname) == 'Linux' ]]; then
   export IS_LINUX=1
-  os_info=$(uname -r)
-  [[ $os_info == *ARCH* ]] && export IS_ARCH_LINUX=1
+  [[ $(uname -r) == *arch* ]] && export IS_ARCH_LINUX=1
 fi
 
 ## path

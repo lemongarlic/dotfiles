@@ -28,7 +28,6 @@ setopt INC_APPEND_HISTORY
 
 
 
-
 # commands
 bindkey '^K' vi-cmd-mode
 
@@ -53,6 +52,7 @@ alias tn="tmux display-message -p '#S'"
 alias phpv='switch-php-version'
 
 if [[ $IS_ARCH_LINUX -eq 1 ]]; then
+  alias wifi='impala'
   alias pac='yay -S --noconfirm --answeredit No'
   alias unpac='sudo pacman -Rns --noconfirm'
 fi
