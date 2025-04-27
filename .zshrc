@@ -53,6 +53,7 @@ alias phpv='switch-php-version'
 
 if [[ $IS_ARCH_LINUX -eq 1 ]]; then
   alias wifi='impala'
+  alias scan='sudo iwctl station wlan0 scan'
   alias add='yay -S --noconfirm --answeredit No'
   alias remove='sudo pacman -Rns --noconfirm'
   alias update'sudo pacman -Syyu --noconfirm'
