@@ -1,0 +1,6 @@
+xterm*faceName: cozette
+xterm*faceSize: 14
+xterm*background: black
+xterm*foreground: white
+xterm*metaSendsEscape: true
+
