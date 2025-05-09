@@ -94,6 +94,8 @@ DefKeymap{
   insert_blank_below = { 'j', prefix = 'edit', mode = { 'n' }, desc = 'insert blank line below' },
   remove_empty_lines = { 'e', prefix = 'edit', mode = { 'n' }, desc = 'remove [e]mpty lines' },
   single_empty_line = { 'E', prefix = 'edit', mode = { 'n' }, desc = 'single empty line' },
+  empty_line_above = { '<m-p>', mode = { 'n', 'i', 'x' }, desc = 'remove [e]mpty lines' },
+  empty_line_below = { '<m-n>', mode = { 'n', 'i', 'x' }, desc = 'single empty line' },
   indent_line = { 'i', prefix = 'edit', mode = { 'n', 'x' }, desc = '[i]ndent' },
   notes_add = { 'a', prefix = 'note', mode = { 'n' }, desc = 'notes [a]dd' },
   notes_search = { 'f', prefix = 'note', mode = { 'n' }, desc = 'notes [f]ind' },

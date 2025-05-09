@@ -137,11 +137,11 @@ local module = {
         swap = {
           enable = true,
           swap_next = {
-            ['<m-n>'] = '@function.inner',
+            -- ['<m-n>'] = '@function.inner',
             ['<c-n>'] = '@parameter.inner',
           },
           swap_previous = {
-            ['<m-p>'] = '@function.inner',
+            -- ['<m-p>'] = '@function.inner',
             ['<c-p>'] = '@parameter.inner',
           },
         },

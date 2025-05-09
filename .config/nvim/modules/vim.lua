@@ -141,11 +141,20 @@ local module = {
     -- vim.api.nvim_set_keymap('x', '+', ':<c-u>norm! ^t:lllvg_<cr>', { noremap = true, silent = true })
     -- vim.api.nvim_set_keymap('o', '+', ':<c-u>norm! ^t:lllvg_<cr>', { noremap = true, silent = true })
 
-    -- pane movement
-    vim.keymap.set({ 't', 'i', 'x' }, '<m-h>', '<c-\\><c-n><c-w>h')
-    vim.keymap.set({ 't', 'i', 'x' }, '<m-j>', '<c-\\><c-n><c-w>j')
-    vim.keymap.set({ 't', 'i', 'x' }, '<m-k>', '<c-\\><c-n><c-w>k')
-    vim.keymap.set({ 't', 'i', 'x' }, '<m-l>', '<c-\\><c-n><c-w>l')
+    -- split management
+    vim.cmd'set splitright'
+    vim.cmd'set splitbelow'
+    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-w>s', '<c-\\><c-n>:new<cr>', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-w>v', '<c-\\><c-n>:vnew<cr>', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-s>', '<c-\\><c-n>:new<cr>', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-v>', '<c-\\><c-n>:vnew<cr>', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-q>', '<c-\\><c-n><c-w>q', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-b>', '<c-\\><c-n><c-w>=', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-o>', '<c-\\><c-n><c-w>o', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-h>', '<c-\\><c-n><c-w>h', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-j>', '<c-\\><c-n><c-w>j', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-k>', '<c-\\><c-n><c-w>k', { silent = true })
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-l>', '<c-\\><c-n><c-w>l', { silent = true })
 
     UseKeymap('vim_kill_buffers', function ()
       vim.cmd'%bd!'

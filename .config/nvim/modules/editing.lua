@@ -163,6 +163,16 @@ local module = {
       remove_empty_lines()
       vim.cmd'put! _'
     end)
+    UseKeymap('empty_line_above', function ()
+      local pos = vim.api.nvim_win_get_cursor(0)
+      vim.cmd'put! _'
+      vim.api.nvim_win_set_cursor(0, { pos[1] + 1, pos[2] })
+    end)
+    UseKeymap('empty_line_below', function ()
+      local view = vim.fn.winsaveview()
+      vim.cmd'put _'
+      vim.fn.winrestview(view)
+    end)
     -- msdos remover
     UseKeymap('msdos_remover', function ()
       pcall(vim.cmd, ':%s/\r//g')
