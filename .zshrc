@@ -52,7 +52,7 @@ alias tn="tmux display-message -p '#S'"
 alias phpv='switch-php-version'
 
 if [[ $IS_ARCH_LINUX -eq 1 ]]; then
-  alias wifi='impala'
+  alias wifi='sudo iwctl station wlan0 scan && impala'
   alias scan='sudo iwctl station wlan0 scan'
   alias add='yay -S --noconfirm --answeredit No'
   alias remove='sudo pacman -Rns --noconfirm'
@@ -181,12 +181,6 @@ load-user-script
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+[ -s "/Users/user/.bun/_bun" ] && source "/Users/user/.bun/_bun"
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
-
-# bun completions
-[ -s "/Users/user/.bun/_bun" ] && source "/Users/user/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"

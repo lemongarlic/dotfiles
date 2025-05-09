@@ -141,6 +141,12 @@ local module = {
     -- vim.api.nvim_set_keymap('x', '+', ':<c-u>norm! ^t:lllvg_<cr>', { noremap = true, silent = true })
     -- vim.api.nvim_set_keymap('o', '+', ':<c-u>norm! ^t:lllvg_<cr>', { noremap = true, silent = true })
 
+    -- pane movement
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-h>', '<c-\\><c-n><c-w>h')
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-j>', '<c-\\><c-n><c-w>j')
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-k>', '<c-\\><c-n><c-w>k')
+    vim.keymap.set({ 't', 'i', 'x' }, '<m-l>', '<c-\\><c-n><c-w>l')
+
     UseKeymap('vim_kill_buffers', function ()
       vim.cmd'%bd!'
       vim.cmd'echo ""'

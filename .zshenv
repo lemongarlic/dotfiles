@@ -1,5 +1,6 @@
 # variables
 export EDITOR="nvr"
+export BUN_INSTALL="$HOME/.bun"
 
 ## tmux
 export IS_TMUX_REMOTE=0
@@ -25,6 +26,7 @@ fi
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$BUN_INSTALL/bin:$PATH"
 if [[ $IS_WSL -eq 1 ]]; then
   export PATH="/home/linuxbrew/.linuxbrew/opt/uutils-coreutils/libexec/uubin:$PATH"
   export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
