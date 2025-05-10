@@ -169,9 +169,16 @@ play() {
 ## syncthing
 sync-syncthing-files() {
   (
-    IP=$(ip -4 addr show wlan0 | awk '/inet / {print $2}' | cut -d/ -f1)
-    if [[ -z "$IP" || "$IP" == 169.254.* || "$IP" == 127.* ]]; then
-      echo "wlan0 has no valid DHCP address" >&2
+    for i in {1..5}; do
+      VALID_IP=$(ip -4 addr show | awk '/inet / {print $2}' | cut -d/ -f1 | grep -Ev '^(127|169\.254)\.' | head -n1)
+      if [[ -n "$VALID_IP" ]]; then
+        break
+      fi
+      sleep 1
+    done
+
+    if [[ -z "$VALID_IP" ]]; then
+      echo "no valid IP address found on any interface" >&2
       return 1
     fi
     syncthing --no-browser &>/dev/null &
