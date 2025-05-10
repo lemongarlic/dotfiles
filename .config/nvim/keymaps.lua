@@ -20,7 +20,7 @@ open = { '<leader>o', desc = '[o]pen' },
 }
 
 DefKeymap{
-  vim_quick_delete = { '<m-x>', mode = { 'n' }, desc = 'quick delete line' },
+  -- vim_quick_delete = { '<m-x>', mode = { 'n' }, desc = 'quick delete line' },
   select_last_insert = { '<leader>i', mode = { 'n' }, desc = 'select last [i]nsert' },
   select_last_paste = { '<leader>p', mode = { 'n' }, desc = 'select last [p]aste' },
   cd_into = { '<leader>W', mode = { 'n' }, desc = 'set current directory' },
