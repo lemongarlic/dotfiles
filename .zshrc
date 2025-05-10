@@ -169,6 +169,11 @@ play() {
 ## syncthing
 sync-syncthing-files() {
   (
+    IP=$(ip -4 addr show wlan0 | awk '/inet / {print $2}' | cut -d/ -f1)
+    if [[ -z "$IP" || "$IP" == 169.254.* || "$IP" == 127.* ]]; then
+      echo "wlan0 has no valid DHCP address" >&2
+      return 1
+    fi
     syncthing --no-browser &>/dev/null &
     sleep 1
     ST_PID=$!
