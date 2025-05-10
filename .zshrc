@@ -169,14 +169,13 @@ play() {
 ## syncthing
 sync-syncthing-files() {
   (
-    for i in {1..5}; do
+    for i in {1..3}; do
       VALID_IP=$(ip -4 addr show | awk '/inet / {print $2}' | cut -d/ -f1 | grep -Ev '^(127|169\.254)\.' | head -n1)
       if [[ -n "$VALID_IP" ]]; then
         break
       fi
       sleep 1
     done
-
     if [[ -z "$VALID_IP" ]]; then
       echo "no valid IP address found on any interface" >&2
       return 1
