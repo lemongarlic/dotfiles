@@ -177,7 +177,7 @@ sync-syncthing-files() {
       sleep 1
     done
     if [[ -z "$VALID_IP" ]]; then
-      echo "no valid IP address found on any interface" >&2
+      echo 'no valid IP address found on any interface' >&2
       return 1
     fi
     syncthing --no-browser &>/dev/null &
@@ -186,19 +186,19 @@ sync-syncthing-files() {
     trap "kill $ST_PID 2>/dev/null; wait $ST_PID 2>/dev/null" EXIT INT
     API_KEY=$(xmllint --xpath 'string(//configuration/gui/apikey)' ~/.local/state/syncthing/config.xml 2>/dev/null)
     if [[ -z "$API_KEY" ]]; then
-      echo "failed to retrieve API key" >&2
+      echo 'failed to retrieve API key' >&2
       kill $ST_PID 2>/dev/null
       return 1
     fi
     FOLDER_IDS_RAW=$(curl -sf -H "X-API-Key: $API_KEY" http://127.0.0.1:8384/rest/system/config)
     if [[ -z "$FOLDER_IDS_RAW" ]]; then
-      echo "failed to retrieve folder configuration" >&2
+      echo 'failed to retrieve folder configuration' >&2
       kill $ST_PID 2>/dev/null
       return 1
     fi
     FOLDER_IDS=("${(@f)$(echo "$FOLDER_IDS_RAW" | jq -r '.folders[].id' 2>/dev/null)}")
     if [[ ${#FOLDER_IDS[@]} -eq 0 ]]; then
-      echo "no folder IDs found" >&2
+      echo 'no folder IDs found' >&2
       kill $ST_PID 2>/dev/null
       return 1
     fi
@@ -207,15 +207,14 @@ sync-syncthing-files() {
     while true; do
       ALL_IDLE=true
       for FOLDER_ID in "${FOLDER_IDS[@]}"; do
-        STATUS=$(curl -sf -H "X-API-Key: $API_KEY" \
-          "http://127.0.0.1:8384/rest/db/status?folder=$FOLDER_ID" | jq -r '.state' 2>/dev/null)
-        if [[ "$STATUS" != "idle" ]]; then
+        STATUS=$(curl -sf -H "X-API-Key: $API_KEY" "http://127.0.0.1:8384/rest/db/status?folder=$FOLDER_ID" | jq -r '.state' 2>/dev/null)
+        if [[ "$STATUS" != 'idle' ]]; then
           ALL_IDLE=false
           break
         fi
       done
       if [[ "$ALL_IDLE" == true ]]; then
-        echo "sync completed"
+        echo 'sync completed'
         break
       fi
       sleep 5
