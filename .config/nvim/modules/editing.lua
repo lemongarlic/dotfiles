@@ -191,7 +191,7 @@ local module = {
       vim.cmd'echo ""'
     end)
     UseKeymap('join', function ()
-      require"treesj".join()
+      require'treesj'.join()
       vim.cmd'echo ""'
     end)
 

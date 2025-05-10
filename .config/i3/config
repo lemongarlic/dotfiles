@@ -4,4 +4,5 @@ bindsym $mod+ctrl+r restart
 bindsym $mod+ctrl+q kill
 bindsym $mod+shift+r exec sudo reboot
 bindsym $mod+shift+q exec sudo poweroff
+bindsym control+v exec --no-startup-id sh -c 'xclip -selection clipboard -o | xdotool type --clearmodifiers -- "$(cat)"'
 exec --no-startup-id i3-sensible-terminal -e 'zsh -i -c "in; sudo i3-msg exit"'; sudo i3-msg exit
