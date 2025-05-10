@@ -43,6 +43,10 @@ local module = {
         vim.opt.number = true
         vim.opt.relativenumber = false
         vim.opt.signcolumn = 'no'
+      elseif vim.bo.filetype == '' and vim.bo.buftype == '' then
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+        vim.opt.signcolumn = 'no'
       elseif vim.api.nvim_win_get_config(0).relative ~= '' then
         vim.opt.number = false
         vim.opt.relativenumber = false
