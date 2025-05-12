@@ -1,0 +1,4 @@
+"xset r off; xdotool keyup --window 0 space key --clearmodifiers --window 0 KP_Enter; xset r on"
+  m:0x14 + c:65
+  Control+Mod2 + space
+
