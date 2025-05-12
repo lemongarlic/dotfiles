@@ -153,14 +153,14 @@ local module = {
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-o>', '<c-\\><c-n><c-w>o<c-w>=', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-x>', '<c-\\><c-n><c-w>x<c-w>=', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-r>', '<c-\\><c-n><c-w>r<c-w>=', { silent = true })
-    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-h>', '<c-\\><c-n><c-w>H<c-w>=', { silent = true })
-    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-j>', '<c-\\><c-n><c-w>J<c-w>=', { silent = true })
-    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-k>', '<c-\\><c-n><c-w>K<c-w>=', { silent = true })
-    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-l>', '<c-\\><c-n><c-w>L<c-w>=', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-h>', '<c-\\><c-n><c-w>h<c-w>=', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-j>', '<c-\\><c-n><c-w>j<c-w>=', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-k>', '<c-\\><c-n><c-w>k<c-w>=', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-l>', '<c-\\><c-n><c-w>l<c-w>=', { silent = true })
+    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-h>', '<c-\\><c-n><c-w>H<c-w>=', { silent = true })
+    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-j>', '<c-\\><c-n><c-w>J<c-w>=', { silent = true })
+    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-k>', '<c-\\><c-n><c-w>K<c-w>=', { silent = true })
+    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-l>', '<c-\\><c-n><c-w>L<c-w>=', { silent = true })
 
     UseKeymap('vim_kill_buffers', function ()
       vim.cmd'%bd!'

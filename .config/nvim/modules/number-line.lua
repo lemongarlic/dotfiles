@@ -7,16 +7,16 @@ local module = {
     local rnu = false
     local sc = 'yes'
     local function apply_on_leave ()
-      if vim.bo.filetype == 'text'
-        or vim.bo.filetype == 'markdown'
-        or vim.bo.filetype == 'org'
-        or vim.bo.filetype == 'help'
-        or vim.bo.filetype == 'man'
-      then
-        vim.opt.number = false
-        vim.opt.relativenumber = false
-        vim.opt.signcolumn = 'no'
-      end
+      -- if vim.bo.filetype == 'text'
+      --   or vim.bo.filetype == 'markdown'
+      --   or vim.bo.filetype == 'org'
+      --   or vim.bo.filetype == 'help'
+      --   or vim.bo.filetype == 'man'
+      -- then
+      --   vim.opt.number = false
+      --   vim.opt.relativenumber = false
+      --   vim.opt.signcolumn = 'no'
+      -- end
     end
     local function apply_on_enter ()
       if vim.bo.buftype == 'terminal'
