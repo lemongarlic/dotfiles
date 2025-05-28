@@ -3,6 +3,7 @@ killall xcape
 xcape -t 100 -e 'Caps_Lock=Escape'
 killall xbindkeys
 xbindkeys
+syncthing --no-browser &
 unclutter &
 xrdb -merge ~/.Xresources
 exec i3
