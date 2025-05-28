@@ -4,6 +4,4 @@ bindsym $mod+ctrl+r restart
 bindsym $mod+ctrl+q kill
 bindsym $mod+shift+r exec sudo reboot
 bindsym $mod+shift+q exec sudo poweroff
-bindsym $ctrl+space exec --no-startup-id xdotool key Return
-bindsym $ctrl+semicolon exec --no-startup-id xdotool key BackSpace
 exec --no-startup-id i3-sensible-terminal -e 'zsh -i -c "in; sudo i3-msg exit"'; sudo i3-msg exit
