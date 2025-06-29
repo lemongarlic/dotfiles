@@ -244,7 +244,7 @@ local module = {
 
     -- insert iso-8601 date
     UseKeymap('insert_date', function ()
-      vim.cmd'execute "norm! a" . strftime("%Y-%m-%dT%H:%M:%S%z")'
+      vim.cmd('execute "norm! a" . strftime("%Y-%m-%dT%H:%M:%S%z")')
     end)
 
     UseKeymap('list_to_args', function ()
