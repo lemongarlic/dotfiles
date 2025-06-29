@@ -144,8 +144,8 @@ local module = {
     -- split management
     vim.cmd'set splitright'
     vim.cmd'set splitbelow'
-    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-w>s', '<c-\\><c-n>:new<cr>', { silent = true })
-    vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-w>v', '<c-\\><c-n>:vnew<cr>', { silent = true })
+    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-w>s', '<c-\\><c-n>:new<cr>', { silent = true })
+    -- vim.keymap.set({ 't', 'i', 'x', 'n' }, '<c-w>v', '<c-\\><c-n>:vnew<cr>', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-s>', '<c-\\><c-n>:new<cr>', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-v>', '<c-\\><c-n>:vnew<cr>', { silent = true })
     vim.keymap.set({ 't', 'i', 'x', 'n' }, '<m-q>', '<c-\\><c-n><c-w>q<c-w>=', { silent = true })

@@ -4,8 +4,6 @@ local module = {
   fn = function ()
     -- use esc to leave terminal
     vim.keymap.set('t', '<esc>', '<c-\\><c-n>G0')
-    -- use window commands while in terminal
-    vim.keymap.set('t', '<c-w>', '<c-\\><c-n><c-w>')
     -- terminal system
     _G.__terminals__ = {}
     local term_list = {}
