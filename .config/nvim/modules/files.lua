@@ -103,7 +103,7 @@ local module = {
     UseKeymap('open_temp_browser', function () files.open('/tmp', false) end)
     UseKeymap('reload_file', function ()
       local winview = vim.fn.winsaveview()
-      vim.cmd'e'
+      vim.cmd'e!'
       vim.fn.winrestview(winview)
     end)
   end
