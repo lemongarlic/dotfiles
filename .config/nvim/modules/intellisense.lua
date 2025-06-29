@@ -275,6 +275,8 @@ local module = {
     require'lspconfig'.ts_ls.setup{}
     vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
     vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+    local hover = vim.lsp.buf.hover ---@diagnostic disable-next-line
+    vim.lsp.buf.hover = function () return hover({ max_width = 100, max_height = 14, border = 'rounded' }) end
     vim.diagnostic.config{
       float = { border = 'rounded' },
     }

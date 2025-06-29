@@ -19,7 +19,11 @@ local module = {
       -- end
     end
     local function apply_on_enter ()
-      if vim.bo.buftype == 'terminal'
+      if vim.bo.filetype == 'markdown' and vim.bo.buftype == 'nofile' then
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+        vim.opt.signcolumn = 'no'
+      elseif vim.bo.buftype == 'terminal'
         or vim.bo.filetype == 'minifiles'
         or vim.bo.filetype == 'aerial-nav'
       then
